@@ -5,8 +5,216 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOB Tracker</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    
+    <header class="w-[80%] mx-auto header">
+        <h1 class="text-4xl font-bold">Job Application Tracker</h1>
+        <div class="">
+            <div>
+                <p>Total</p>
+                <p id="total">0</p>
+            </div>
+            <div>
+                <p>Interview</p>
+                <p id="interviewTotal">0</p>
+            </div>
+            <div>
+                <p>Rejected</p>
+                <p id="rejectedTotal">0</p>
+            </div>
+        </div>
+    </header>
+    <main class="w-[80%] mx-auto main">
+        <div>
+            <div>
+                <button class="" id="all-filter-btn">All</button>
+                <button class="" id="interview-filter-btn">Interview</button>
+                <button class="" id="rejected-filter-btn">Rejected</button>
+            </div>
+            <div>
+                <p id="count">0</p>
+            </div>
+        </div>
+
+        <section id="allCard">
+            <div class="card">
+                <div>
+                    <div>
+                        <p class="compayName">CloudPeak Labs</p>
+                        <p class="jobName">Frontend Engineer</p>
+                        <p class="jobDescription"> Remote • Full-time • $110,000 - $145,000</p>
+                    </div>
+                    
+                    <p class="status">Not Applied</p>
+                    <p class="notes">Build accessible React interfaces and collaborate with design to deliver polished user experiences.</p>
+                   
+                    <div>
+                        <button class="interview-btn">Interview</button>
+                        <button class="rejected-btn">Rejected</button>
+                    </div>
+                    
+                </div>
+                <div>
+                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div>
+                        <p class="compayName">DataNest Analytics</p>
+                        <p class="jobName">Data Analyst</p>
+                        <p class="jobDescription"> Hybrid • Full-time • $85,000 - $105,000</p>
+                    </div>
+                    
+                    <p class="status">Not Applied</p>
+                    <p class="notes">Analyze product metrics, build dashboards, and present insights to cross-functional stakeholders.</p>
+                   
+                    <div>
+                        <button class="interview-btn">Interview</button>
+                        <button class="rejected-btn">Rejected</button>
+                    </div>
+                    
+                </div>
+                <div>
+                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div>
+                        <p class="compayName">SecureWave Systems</p>
+                        <p class="jobName">Security Engineer</p>
+                        <p class="jobDescription"> On-site • Full-time • $125,000 - $160,000</p>
+                    </div>
+                    
+                    <p class="status">Not Applied</p>
+                    <p class="notes">Harden cloud infrastructure, automate vulnerability scans, and respond to security incidents.</p>
+                   
+                    <div>
+                        <button class="interview-btn">Interview</button>
+                        <button class="rejected-btn">Rejected</button>
+                    </div>
+                    
+                </div>
+                <div>
+                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div>
+                        <p class="compayName">PixelForge Studio</p>
+                        <p class="jobName">UI/UX Designer</p>
+                        <p class="jobDescription"> Remote • Contract • $70/hr - $95/hr</p>
+                    </div>
+                    
+                    <p class="status">Not Applied</p>
+                    <p class="notes">Create user flows, wireframes, and high-fidelity prototypes for web and mobile products.</p>
+                   
+                    <div>
+                        <button class="interview-btn">Interview</button>
+                        <button class="rejected-btn">Rejected</button>
+                    </div>
+                    
+                </div>
+                <div>
+                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div>
+                        <p class="compayName">ScaleGrid AI</p>
+                        <p class="jobName">Machine Learning Engineer</p>
+                        <p class="jobDescription"> Hybrid • Full-time • $140,000 - $185,000</p>
+                    </div>
+                    
+                    <p class="status">Not Applied</p>
+                    <p class="notes">Train and deploy recommendation models, monitor drift, and improve model performance in production.</p>
+                   
+                    <div>
+                        <button class="interview-btn">Interview</button>
+                        <button class="rejected-btn">Rejected</button>
+                    </div>
+                    
+                </div>
+                <div>
+                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div>
+                        <p class="compayName">NorthBridge Tech</p>
+                        <p class="jobName">Backend Developer</p>
+                        <p class="jobDescription"> Remote • Full-time • $115,000 - $150,000</p>
+                    </div>
+                    
+                    <p class="status">Not Applied</p>
+                    <p class="notes">Develop scalable APIs, optimize database queries, and implement robust authentication flows.</p>
+                   
+                    <div>
+                        <button class="interview-btn">Interview</button>
+                        <button class="rejected-btn">Rejected</button>
+                    </div>
+                    
+                </div>
+                <div>
+                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div>
+                        <p class="compayName">Orbit Commerce</p>
+                        <p class="jobName">Product Manager</p>
+                        <p class="jobDescription"> On-site • Full-time • $120,000 - $155,000</p>
+                    </div>
+                    
+                    <p class="status">Not Applied</p>
+                    <p class="notes">Define product roadmap, prioritize features, and coordinate execution across engineering and design.</p>
+                   
+                    <div>
+                        <button class="interview-btn">Interview</button>
+                        <button class="rejected-btn">Rejected</button>
+                    </div>
+                    
+                </div>
+                <div>
+                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div>
+                        <p class="compayName">BrightPath Solutions</p>
+                        <p class="jobName">QA Automation Engineer</p>
+                        <p class="jobDescription"> Hybrid • Full-time • $95,000 - $125,000</p>
+                    </div>
+                    
+                    <p class="status">Not Applied</p>
+                    <p class="notes">Build end-to-end automated test suites and improve release quality across multiple environments.</p>
+                   
+                    <div>
+                        <button class="interview-btn">Interview</button>
+                        <button class="rejected-btn">Rejected</button>
+                    </div>
+                    
+                </div>
+                <div>
+                    <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
