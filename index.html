@@ -7,35 +7,40 @@
     <link rel="stylesheet" href="./style.css">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.cdnfonts.com/css/inter" rel="stylesheet">
+                
 </head>
-<body>
+<body class="text-gray-700">
     <header class="w-[80%] mx-auto header">
         <h1 class="text-4xl font-bold">Job Application Tracker</h1>
-        <div class="">
-            <div>
+        <div class="summary">
+            <div class="s-card">
                 <p>Total</p>
-                <p id="total">0</p>
+                <p id="total" class="text-3xl font-bold">0</p>
             </div>
-            <div>
+            <div class="s-card">
                 <p>Interview</p>
-                <p id="interviewTotal">0</p>
+                <p id="interviewTotal" class="text-3xl font-bold text-green-600">0</p>
             </div>
-            <div>
+            <div class="s-card">
                 <p>Rejected</p>
-                <p id="rejectedTotal">0</p>
+                <p id="rejectedTotal" class="text-3xl font-bold text-red-600">0</p>
             </div>
         </div>
     </header>
     <main class="w-[80%] mx-auto main">
-        <div>
+        <div class="jobs-header">
+            <h3 class="text-3xl font-bold">Available Jobs</h3>
+            <p><span id="count">0 </span>Jobs</p>
+        </div>
+       
+        <div class="filters">
             <div>
-                <button class="" id="all-filter-btn">All</button>
-                <button class="" id="interview-filter-btn">Interview</button>
-                <button class="" id="rejected-filter-btn">Rejected</button>
+                <button class="filter-btn active" id="all-filter-btn">All</button>
+                <button class="filter-btn" id="interview-filter-btn">Interview</button>
+                <button class="filter-btn" id="rejected-filter-btn">Rejected</button>
             </div>
-            <div>
-                <p id="count">0</p>
-            </div>
+            
         </div>
 
         <section id="allCard">
@@ -50,7 +55,7 @@
                     <p class="status">Not Applied</p>
                     <p class="notes">Build accessible React interfaces and collaborate with design to deliver polished user experiences.</p>
                    
-                    <div>
+                    <div class="action-btn">
                         <button class="interview-btn">Interview</button>
                         <button class="rejected-btn">Rejected</button>
                     </div>
@@ -72,7 +77,7 @@
                     <p class="status">Not Applied</p>
                     <p class="notes">Analyze product metrics, build dashboards, and present insights to cross-functional stakeholders.</p>
                    
-                    <div>
+                    <div class="action-btn">
                         <button class="interview-btn">Interview</button>
                         <button class="rejected-btn">Rejected</button>
                     </div>
@@ -94,7 +99,7 @@
                     <p class="status">Not Applied</p>
                     <p class="notes">Harden cloud infrastructure, automate vulnerability scans, and respond to security incidents.</p>
                    
-                    <div>
+                    <div class="action-btn">
                         <button class="interview-btn">Interview</button>
                         <button class="rejected-btn">Rejected</button>
                     </div>
@@ -116,7 +121,7 @@
                     <p class="status">Not Applied</p>
                     <p class="notes">Create user flows, wireframes, and high-fidelity prototypes for web and mobile products.</p>
                    
-                    <div>
+                    <div class="action-btn">
                         <button class="interview-btn">Interview</button>
                         <button class="rejected-btn">Rejected</button>
                     </div>
@@ -138,7 +143,7 @@
                     <p class="status">Not Applied</p>
                     <p class="notes">Train and deploy recommendation models, monitor drift, and improve model performance in production.</p>
                    
-                    <div>
+                    <div class="action-btn">
                         <button class="interview-btn">Interview</button>
                         <button class="rejected-btn">Rejected</button>
                     </div>
@@ -160,7 +165,7 @@
                     <p class="status">Not Applied</p>
                     <p class="notes">Develop scalable APIs, optimize database queries, and implement robust authentication flows.</p>
                    
-                    <div>
+                    <div class="action-btn">
                         <button class="interview-btn">Interview</button>
                         <button class="rejected-btn">Rejected</button>
                     </div>
@@ -182,7 +187,7 @@
                     <p class="status">Not Applied</p>
                     <p class="notes">Define product roadmap, prioritize features, and coordinate execution across engineering and design.</p>
                    
-                    <div>
+                    <div class="action-btn">
                         <button class="interview-btn">Interview</button>
                         <button class="rejected-btn">Rejected</button>
                     </div>
@@ -204,7 +209,7 @@
                     <p class="status">Not Applied</p>
                     <p class="notes">Build end-to-end automated test suites and improve release quality across multiple environments.</p>
                    
-                    <div>
+                    <div class="action-btn">
                         <button class="interview-btn">Interview</button>
                         <button class="rejected-btn">Rejected</button>
                     </div>
