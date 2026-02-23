@@ -31,19 +31,26 @@
     <main class="w-[80%] mx-auto main">
         <div class="jobs-header">
             <h3 class="text-3xl font-bold">Available Jobs</h3>
-            <p><span id="count">0 </span>Jobs</p>
+            <p><span id="count">0 </span> Jobs</p>
         </div>
        
         <div class="filters">
             <div>
-                <button class="filter-btn active" id="all-filter-btn">All</button>
-                <button class="filter-btn" id="interview-filter-btn">Interview</button>
-                <button class="filter-btn" id="rejected-filter-btn">Rejected</button>
+                <button onclick="toggleStyle('all-filter-btn')" class="filter-btn active" id="all-filter-btn">All</button>
+                <button onclick="toggleStyle('interview-filter-btn')" class="filter-btn" id="interview-filter-btn">Interview</button>
+                <button onclick="toggleStyle('rejected-filter-btn')" class="filter-btn" id="rejected-filter-btn">Rejected</button>
             </div>
             
         </div>
-
+        <section id="filtered-section" class="hidden">
+            <div class="no-job-message">
+                <p>No Jobs Available</p>
+            </div>
+        </section>
         <section id="allCard">
+            <div class="no-job-message hidden">
+                <p>No Jobs Available</p>
+            </div>
             <div class="card">
                 <div>
                     <div>
@@ -221,5 +228,11 @@
             </div>
         </section>
     </main>
+
+
+
+
+
+    <script src="script.js"></script>
 </body>
 </html>
