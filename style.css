@@ -131,12 +131,35 @@ h3{
     border-color: #ef4444;
 }
 
+.no-job-message{
+    text-align: center;
+    color: #64748B;
+    font-size: 18px;
+    background: white;
+    padding: 100px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+    img{
+        display: block;
+        margin: 0 auto 20px;
+    }
+}
 
+.filter-heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #002C5C;
+    margin-bottom: 10px;
+}
 
 
 
 
 @media (max-width: 768px) {
+    .no-job-message{
+        padding: 50px;
+        margin-bottom: 20px;
+    }
     .summary {
         grid-template-columns: 1fr;
     }

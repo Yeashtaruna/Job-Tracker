@@ -14,6 +14,16 @@ const allFilterBtn=document.getElementById("all-filter-btn");
 const interviewFilterBtn=document.getElementById("interview-filter-btn");
 const rejectedFilterBtn=document.getElementById("rejected-filter-btn");
 
+function renderFilteredEmptyState(){
+    filteredSection.innerHTML=`
+        <div class="no-job-message">
+            <img src="./images/jobs.png">
+            <p class="filter-heading">No jobs available</p>
+            <p>Check back soon for new job opportunities</p>
+        </div>
+    `;
+}
+
 function calculateCount(){
     total.innerText=allCards.querySelectorAll(".card").length;
     interview.innerText=interviewList.length;
@@ -104,9 +114,24 @@ mainContainer.addEventListener("click",function(event){
         card.remove();
         calculateCount();
         count.innerText=allCards.querySelectorAll(".card").length;
+
+        if(interviewFilterBtn.classList.contains("active") && interviewList.length===0){
+            filteredSection.classList.remove("hidden");
+            filteredSection.style.display="grid";
+            renderFilteredEmptyState();
+        }
+
+        if(rejectedFilterBtn.classList.contains("active") && rejectedList.length===0){
+            filteredSection.classList.remove("hidden");
+            filteredSection.style.display="grid";
+            renderFilteredEmptyState();
+        }
         
         if(allCards.querySelectorAll(".card").length===0){
-            allCards.querySelector(".no-job-message").classList.remove("hidden");
+            allCards.style.display="none";
+            filteredSection.classList.remove("hidden");
+            filteredSection.style.display="grid";
+            renderFilteredEmptyState();
         }
     }
 
@@ -144,9 +169,18 @@ function renderCards(list){
 }
 
 allFilterBtn.addEventListener("click",function(){
-    allCards.style.display="grid";
-    filteredSection.style.display="none";
-    count.innerText=allCards.querySelectorAll(".card").length;
+    const totalCards=allCards.querySelectorAll(".card").length;
+    count.innerText=totalCards;
+
+    if(totalCards===0){
+        allCards.style.display="none";
+        filteredSection.classList.remove("hidden");
+        filteredSection.style.display="grid";
+        renderFilteredEmptyState();
+    }else{
+        allCards.style.display="grid";
+        filteredSection.style.display="none";
+    }
 })
 
 interviewFilterBtn.addEventListener("click",function(){
@@ -155,7 +189,9 @@ interviewFilterBtn.addEventListener("click",function(){
     count.innerText=interviewList.length;
     if(interviewList.length===0){
         filteredSection.classList.remove("hidden");
+        renderFilteredEmptyState();
     }else{
+        filteredSection.classList.remove("hidden");
         renderCards(interviewList);
     }
 })
@@ -166,7 +202,9 @@ rejectedFilterBtn.addEventListener("click",function(){
     count.innerText=rejectedList.length;
     if(rejectedList.length===0){
         filteredSection.classList.remove("hidden");
+        renderFilteredEmptyState();
     }else{
+        filteredSection.classList.remove("hidden");
         renderCards(rejectedList);
     }
 })
