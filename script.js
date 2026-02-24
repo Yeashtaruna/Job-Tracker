@@ -77,6 +77,7 @@ mainContainer.addEventListener("click",function(event){
         rejectedList=rejectedList.filter(job=>!(job.jobTitle===jobTitle && job.companyName===companyName));
         status.innerText="Interview";
         status.style.color="#16a34a";
+         status.style.backgroundColor="#d2e8da";
         calculateCount();
 
         if(interviewFilterBtn.classList.contains("active")){
@@ -122,6 +123,7 @@ mainContainer.addEventListener("click",function(event){
         interviewList=interviewList.filter(job=>!(job.jobTitle===jobTitle && job.companyName===companyName));
         status.innerText="Rejected";
         status.style.color="#dc2626";
+        status.style.backgroundColor="#fbd3d3";
         calculateCount();
 
         if(interviewFilterBtn.classList.contains("active")){
