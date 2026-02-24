@@ -72,9 +72,29 @@ mainContainer.addEventListener("click",function(event){
         const interviewExists=interviewList.find(job=>job.jobTitle===jobTitle && job.companyName===companyName);
         if(!interviewExists){
             interviewList.push(jobObject);
-            status.innerText="Interview";
-            status.style.color="#16a34a";
-            calculateCount();
+        }
+
+        rejectedList=rejectedList.filter(job=>!(job.jobTitle===jobTitle && job.companyName===companyName));
+        status.innerText="Interview";
+        status.style.color="#16a34a";
+        calculateCount();
+
+        if(interviewFilterBtn.classList.contains("active")){
+            count.innerText=interviewList.length;
+            if(interviewList.length===0){
+                renderFilteredEmptyState();
+            }else{
+                renderCards(interviewList);
+            }
+        }
+
+        if(rejectedFilterBtn.classList.contains("active")){
+            count.innerText=rejectedList.length;
+            if(rejectedList.length===0){
+                renderFilteredEmptyState();
+            }else{
+                renderCards(rejectedList);
+            }
         }
     }
 
@@ -97,9 +117,29 @@ mainContainer.addEventListener("click",function(event){
         const rejectedExists=rejectedList.find(job=>job.jobTitle===jobTitle && job.companyName===companyName);
         if(!rejectedExists){
             rejectedList.push(jobObject);
-            status.innerText="Rejected";
-            status.style.color="#dc2626";
-            calculateCount();
+        }
+
+        interviewList=interviewList.filter(job=>!(job.jobTitle===jobTitle && job.companyName===companyName));
+        status.innerText="Rejected";
+        status.style.color="#dc2626";
+        calculateCount();
+
+        if(interviewFilterBtn.classList.contains("active")){
+            count.innerText=interviewList.length;
+            if(interviewList.length===0){
+                renderFilteredEmptyState();
+            }else{
+                renderCards(interviewList);
+            }
+        }
+
+        if(rejectedFilterBtn.classList.contains("active")){
+            count.innerText=rejectedList.length;
+            if(rejectedList.length===0){
+                renderFilteredEmptyState();
+            }else{
+                renderCards(rejectedList);
+            }
         }
     }
 
